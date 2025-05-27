@@ -1,0 +1,459 @@
+/*------------------------基本設定---------------------------------*/
+
+/* 花とちょうちょフォント読み込み */
+@font-face {
+    font-family: 'Hanatochocho';
+    src: url('../fonts/hanatotyoutyo.woff2') format('woff2'),
+         url('../fonts/hanatotyoutyo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 基本スタイル */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body h1, body h2, body p {
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.1),  /* 横方向の影 */
+        -2px -2px 5px rgba(0, 0, 0, 0.1), /* 逆方向の影 */
+        4px 4px 10px rgba(0, 0, 0, 0.2); /* より滲んだ影 */
+}
+
+body h1 {
+    font-family: 'Hanatochocho';
+}
+
+body h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body p {
+    font-family: 'Source Han Serif JP', serif;
+}
+
+/*----------------------------nav bar デザイン--------------------------------*/
+
+/* ハンバーガー */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    background: #553B2D;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* ナビメニュー */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0 30px 30px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu a {
+    color: #553B2D;
+    text-decoration: none;
+    font-size: 22px;
+    margin: 15px 0;
+    background: rgba(201, 237, 248, 0.6);
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 160px; /* 横幅を統一 */
+    justify-content: center; /* 文字を中央に寄せる */
+  }
+
+  .nav-menu a:hover {
+    background: #E5D3B3;
+    transform: scale(1.05);
+  }
+
+  /* メニューオープン時アニメーション */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  
+
+/*------------------------左右分割レイアウト-------------------------*/
+.container {
+    display: flex;
+    height: 100vh; /* 全画面表示 */
+    overflow: hidden;
+  }
+  
+  .left-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw; 
+    height: 100vh;
+}
+
+/* ここに丸みとオーバーフローを適用 */
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 10px solid white; /* 丸みのある枠を作る */
+    box-sizing: border-box;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+  
+  /* 右側：スクロール */
+   .right-scroll {
+    margin-left: 50vw; /* 左50%分を避ける */
+    width: 50vw;
+    height: 100vh;
+    overflow-y: auto; /* scroll → autoに変更（スクロールバーは必要時だけ表示） */
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+  }
+  
+  /*------------------------コンテンツ-------------------------*/
+  .work-header {
+    margin: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .work-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'Hanatochocho', sans-serif;
+    color: #bfe1ec;
+    transform: rotate(-5deg);
+    position: absolute;
+    top: -5%;
+    left: 0;
+  }
+  
+  .work-title h1 {
+    margin: 0.5rem 2rem;
+    font-size: 2.4rem;
+    text-shadow: none;
+    font-weight: normal;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+  .work-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #505555;
+    margin: 2rem;
+    background-color: #f9f9f9;
+    padding: 2.2rem;
+  }
+  
+  .works-button {
+    font-size: 18px;
+    display: inline-block;
+    padding: 0.5em 1em 0.3em;
+    position: relative;
+    border: solid 2px #80A9B6;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 2rem 12rem;
+  }
+  
+  .works-button a {
+      text-decoration: none;
+      color: #80A9B6;
+      z-index: 2;
+      position: relative;
+  }
+  
+  .works-button:before {
+    background-color: rgba(128, 169, 182, 0.3);
+    border-radius: 5px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 1;
+  }
+  
+  .works-button:hover {
+    background: linear-gradient(145deg, #c9dee5, #ffffff);
+    box-shadow: 0 4px 12px rgba(128, 169, 182, 0.15);
+  }
+
+  .works-button:hover::before {
+    opacity: 0;
+  }
+  
+  /* 詳細セクション */
+  .details .section-text {
+    margin: 3rem;
+  }
+  
+  .info-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+/*----------------------------details セクション-----------------------------------*/
+.details {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-text {
+    border-top: 1px solid #ddd;
+    padding: 2rem 0;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex;
+    gap: 2rem;
+}
+
+.info-title {
+    width: 150px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+    text-shadow: none;
+    font-family: 'Hanatochocho', sans-serif;
+    color: #80A9B6;
+}
+
+.info-description {
+    flex: 1;
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1rem;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #505555;
+}
+
+
+/*----------------------------next-work セクション-----------------------------------*/
+.next-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 6rem;
+}
+
+.next-work h3 {
+    font-family: 'Hanatochocho', snas-serif;
+    color: #CBCBEF;
+    font-size: 2rem;
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    transform: rotate(-3deg);
+}
+
+.next-work-img {
+    width: 30rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-top: 10rem;
+    position: relative;
+  }
+
+  .next-work-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+.next-work img:hover {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+.back {
+    margin: 4rem;
+}
+
+.back a {
+    position: relative;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: rgba(128, 169, 182, 0.8);
+    width: 100px;
+    height: 100px;
+    border: double 4px rgba(128, 169, 182, 0.8);
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back a::after {
+    content: "";
+    position: absolute;
+    bottom: 26px; /* 中央下あたりに調整 */
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background-color: rgba(128, 169, 182, 0.8);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.back a:hover::after {
+    transform: scaleX(1);
+}
+
+/*-------------------------------contact セクション---------------------------------*/
+.contact-simple {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .contact-simple h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #505555;
+    text-shadow: none;
+  }
+  
+  .contact-simple p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #505555;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+  /* ✅ ボタン部分をスライドエフェクトに変更 */
+  .contact-simple a {
+    display: inline-block;
+    width: 24rem;
+    line-height: 46px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    border: 3px solid #80a9b6;
+    color: #80a9b6;
+    font-size: 1.2rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: all .35s;
+    margin-top: 2rem;
+    z-index: 2;
+  }
+  
+  .contact-simple a:before,
+  .contact-simple a:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background: rgba(128, 169, 182, 0.8);
+    z-index: -1;
+    transition: all .35s;
+  }
+  
+  .contact-simple a:before {
+    opacity: 0.5;
+  }
+  
+  .contact-simple a:after {
+    transition-delay: .2s;
+  }
+  
+  .contact-simple a:hover {
+    color: #fff;
+  }
+  
+  .contact-simple a:hover:before,
+  .contact-simple a:hover:after {
+    top: 0;
+  }
+
+
+/*----------------------- footer ---------------------------------*/
+.footer {
+    padding: 2rem;
+}
+
+.footer a {
+    color:#505555;
+    text-decoration: none;
+}

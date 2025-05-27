@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'hanatotyoutyo';
+    src: url('hanatotyoutyo.woff2') format('woff2'),
+        url('hanatotyoutyo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

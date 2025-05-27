@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanami's portfolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/home.css">
+    
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Han+Serif+JP&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JavaScript -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="js/home.js" defer></script>
+</head>
+<body>
+    <section class="hero">
+        <!-- ハンバーガーボタン -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- ナビメニュー -->
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#home"><i class="fas fa-house"></i> Home</a>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+            <a href="#works"><i class="fas fa-image"></i> Works</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+
+        <div class="hero-title">
+            <h1 class="title-left" id="titleLeft">Nanami</h1>
+            <h1 class="title-right" id="titleRight">Portfolio</h1>
+            <h2 class="sub-title fade-out">Web Designer</h2>
+            <p class="purple-p fade-out">I design with heart, transforming ideas into beautiful, 
+                soft web experiences that evoke feeling and connection.</p>
+            <p class="lightblue-p fade-out">Where creativity meets emotion.</p>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="add-info-container">
+            <div class="additional-info">
+                <p class="add-title">美しさと機能を融合させる、心に響くデザインを</p>
+                <p class="add-sub">Webデザイナー | UI/UXデザイナー | フリーランス</p>
+                <p class="add-sub">淡く繊細なデザインが得意です</p>
+            </div>
+
+            <div class="view-more">
+                <a href="#">作品をみてみる</a>
+            </div>
+        </div>
+
+        <div class="menu-container">
+            <div class="menu-block" data-speed="1.2">
+              <img src="images/works1.jpg" class="menu-item" />
+              <a href="#about-me">#0<br>ABOUT ME</a>
+            </div>
+            <div class="menu-block" data-speed="0.8">
+              <img src="images/works1.jpg" class="menu-item" />
+              <a href="#works">#1<br>WORKS</a>
+            </div>
+            <div class="menu-block" data-speed="0.8">
+              <img src="images/works1.jpg" class="menu-item" />
+              <a href="#contact">#2<br>CONTACT</a>
+            </div>
+            <div class="menu-block" data-speed="1.2">
+              <img src="images/works1.jpg" class="menu-item" />
+              <a href="#">#3<br>OTHER</a>
+            </div>
+          </div>
+    </section>
+
+    <section class="new-works">
+        <div class="photo-frame-container">
+          <!-- 1 -->
+          <div class="photo-frame rotate1">
+            <img class="photo-frame-img" src="images/works1.jpg" alt="ポートフォリオサムネイル">
+            <img class="photo-frame-overlay" src="images/photo-frame.png" aria-hidden="true">
+          </div>
+          <!-- 2 -->
+          <div class="photo-frame rotate2">
+            <img class="photo-frame-img" src="images/works1.jpg" alt="ポートフォリオサムネイル">
+            <img class="photo-frame-overlay" src="images/photo-frame.png" aria-hidden="true">
+          </div>
+          <!-- 3 -->
+          <div class="photo-frame rotate3">
+            <img class="photo-frame-img" src="images/works1.jpg" alt="ポートフォリオサムネイル">
+            <img class="photo-frame-overlay" src="images/photo-frame.png" aria-hidden="true">
+          </div>
+          <!-- 4 -->
+          <div class="photo-frame rotate4">
+            <img class="photo-frame-img" src="images/works1.jpg" alt="ポートフォリオサムネイル">
+            <img class="photo-frame-overlay" src="images/photo-frame.png" aria-hidden="true">
+          </div>
+          <!-- 5 -->
+          <div class="photo-frame rotate5">
+            <img class="photo-frame-img" src="images/works1.jpg" alt="ポートフォリオサムネイル">
+            <img class="photo-frame-overlay" src="images/photo-frame.png" aria-hidden="true">
+          </div>
+        </div>
+        <h1><span class="n-span">N</span>ewest Design <span class="w-span">W</span>orks</h1>
+      </section>      
+
+    <div class="wrapper">
+        <section class="section first-section" id="about-me">
+            <div>
+                <p>About me</p>
+            </div>
+        </section>
+
+        <section class="section bridge-section bridge-purple">
+            <div class="bridge-text">
+                <p>I design with feeling — soft, subtle, and sincere.</p>
+            </div>
+        </section>
+
+        <section class="section about-me">
+            <div class="intro-title">
+                <h1>わたしのこと</h1>
+                <h3>About me</h3>
+            </div>
+            <div class="intro-container">
+                <div class="intro-wrapper">
+                    <div class="intro-name">
+                        <h2>ななみ</h2>
+                        <h4>Nanami</h4>
+                    </div>
+                    <div class="intro-content">
+                        個人の方にSNSアイコン等のイラストを描く活動をしていました。
+                        ブランドイメージを動きのある形で伝えることができる
+                        Webデザインに惹かれ、Webデザイナーを目指すことを決意。
+                        8ヶ月間スクールでWebデザインについて学び現在は転職活動をしています
+                    </div>
+                    <div class="intro-button">
+                        <a href="#">詳しくみる</a>
+                    </div>
+                </div>
+                <div class="intro-img">
+                    <img src="images/IMG_1376.jpg" alt="自己紹介画像">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrapper">
+        <section class="section second-section">
+            <div>
+                <p>Works</p>
+            </div>
+        </section>
+
+        <section class="section bridge-section2 bridge-blue">
+            <div class="bridge-text">
+                <p>I design with feeling — soft, subtle, and sincere.</p>
+            </div>
+        </section>
+
+        <section class="section works" id="works">
+            <div class="works-title">
+                <h1>作品一覧</h1>
+                <h3>Works</h3>
+            </div>
+            <div class="works-container" id="works">
+                <div class="works-img">
+                    <img src="images/works1.jpg" alt="作品画像">
+                </div>
+                <div class="works-wrapper">
+                    <div class="works-name">
+                        <h3>#Website</h3>
+                        <h2>aou菓子店</h2>
+                    </div>
+                    <div class="works-content">
+                        大阪府にあるご夫婦の小さな洋菓子店の公式サイトを制作しました
+                    </div>
+                    <div class="works-skills">
+                        <p> direction | design | cording</p>
+                    </div>
+                    <div class="works-button">
+                        <a href="#">詳しくみる</a>
+                    </div>
+                </div>
+            </div>
+            <div class="works-container reverse">
+                <div class="works-img">
+                    <img src="images/works1.jpg" alt="作品画像">
+                </div>
+                <div class="works-wrapper">
+                    <div class="works-name">
+                        <h3>#Website</h3>
+                        <h2>aou菓子店</h2>
+                    </div>
+                    <div class="works-content">
+                        大阪府にあるご夫婦の小さな
+                        洋菓子店の公式サイトを制作しました
+                    </div>
+                    <div class="works-skills">
+                        <p> direction | design | cording</p>
+                    </div>
+                    <div class="works-button">
+                        <a href="#">詳しくみる</a>
+                    </div>
+                </div>
+            </div>
+            <div class="works-container">
+                <div class="works-img">
+                    <img src="images/works1.jpg" alt="作品画像">
+                </div>
+                <div class="works-wrapper">
+                    <div class="works-name">
+                        <h3>#Banner</h3>
+                        <h2>鉄道会社サイト内バナー</h2>
+                    </div>
+                    <div class="works-content">
+                        架空の鉄道会社が実施するキャンペーン用のサイト内バナーを制作しました
+                    </div>
+                    <div class="works-skills">
+                        <p> banner design | direction</p>
+                    </div>
+                    <div class="works-button">
+                        <a href="#">詳しくみる</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="#">view all</a>
+            </div>
+        </section>
+    </div>
+
+    <section class="contact" id="contact">
+        <div class="infinite-scroll">
+            <div id="marquee-container">
+                <div id="marquee-wrapper">
+                    <div id="marquee">
+                        <img src="images/works1.jpg" alt="Image 1">
+                        <img src="images/works1.jpg" alt="Image 2">
+                        <img src="images/works1.jpg" alt="Image 3">
+                        <img src="images/works1.jpg" alt="Image 4">
+                        <img src="images/works1.jpg" alt="Image 5">
+                        <img src="images/works1.jpg" alt="Image 6">
+                    </div>
+                </div>
+            </div>
+            <div id="marquee-container2">
+                <div id="marquee-wrapper2">
+                    <div id="marquee2">
+                        <img src="images/works1.jpg" alt="Image 1">
+                        <img src="images/works1.jpg" alt="Image 2">
+                        <img src="images/works1.jpg" alt="Image 3">
+                        <img src="images/works1.jpg" alt="Image 4">
+                        <img src="images/works1.jpg" alt="Image 5">
+                        <img src="images/works1.jpg" alt="Image 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-title-container">
+            <h1 class="contact-title" id="contact">CONTACT</h1>
+        </div> 
+        <div class="contact-content">
+            <p><span>ご覧いただきありがとうございます</span></p>
+            <img src="images/icon.png" alt="アイコン画像">
+            <p>下記のメールアドレスに気軽にご連絡ください</p>
+            <a href="#">qoo.benihoppe@gmail.com</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <a href="#">TOP</a> | <a href="#">わたしのこと</a> | <a href="#">作品一覧</a>
+        </div>
+    </footer>
+</body>
+</html>

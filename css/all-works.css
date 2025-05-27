@@ -1,0 +1,513 @@
+
+/* 花とちょうちょフォント読み込み */
+@font-face {
+    font-family: 'Hanatochocho';
+    src: url('../fonts/hanatotyoutyo.woff2') format('woff2'),
+         url('../fonts/hanatotyoutyo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 基本スタイル */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #f7f7f7;
+}
+
+/* * {
+    outline: 1px solid red;
+  }
+   */
+
+.about-me,
+.intro-container,
+.intro-title,
+.intro-img,
+.intro-content {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body h1, body h2, body p {
+    text-shadow: 
+        2px 2px 5px rgba(0, 0, 0, 0.1),  /* 横方向の影 */
+        -2px -2px 5px rgba(0, 0, 0, 0.1), /* 逆方向の影 */
+        4px 4px 10px rgba(0, 0, 0, 0.2); /* より滲んだ影 */
+}
+
+body h1 {
+    font-family: 'Hanatochocho';
+}
+
+body h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body p {
+    font-family: 'Source Han Serif JP', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------------------------nav bar デザイン---------------------------------*/
+header {
+  position: fixed;
+  top: -10px;
+  right: 40px;
+  z-index: 1500;
+}
+
+/* ハンバーガー */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    background: #553B2D;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* ナビメニュー */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0 30px 30px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu a {
+    color: #553B2D;
+    text-decoration: none;
+    font-size: 22px;
+    margin: 15px 0;
+    background: rgba(201, 237, 248, 0.6);
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 160px; /* 横幅を統一 */
+    justify-content: center; /* 文字を中央に寄せる */
+  }
+
+  .nav-menu a:hover {
+    background: #E5D3B3;
+    transform: scale(1.05);
+  }
+
+  /* メニューオープン時アニメーション */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+/*------------------------------top design-----------------------------------------*/
+
+.logo-container {
+  width: 18rem;
+  height: 8rem;
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/*--------------------------------------------------------------*/
+.all-work-wrapper {
+    width: 100%;
+    min-width: 100%;
+    overflow-x: auto; /* 横スクロール可能にする */
+    padding: 0;
+    /* position: relative; */
+    background-color: #f7f7f7; /* 背景色はここで設定 */
+  }
+
+  .all-work-wrapper a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .all-work-container {
+    display: flex;
+    gap: 46px;
+    scroll-snap-type: x mandatory;
+    min-width: max-content;
+    padding: 60px 0;
+    overflow-x: auto; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.all-work-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+  .work-row1 {
+    background-color: #f7f7f7;
+    min-width: max-content;
+    padding-right: 100px;
+    padding-left: 520px;
+    margin-top: 100px;
+  }
+
+  .work-row2 {
+    background-color: #eef0f0;
+    min-width: max-content;
+    padding-right: 420px;
+    padding-left: 300px;
+  }
+
+  .work-row3 {
+    background-color: #e7e7e7;
+    min-width: max-content;
+    padding-right: 70px;
+    padding-left: 650px;
+  }
+
+  .work-row4 {
+    background-color: #eef0f0;
+    min-width: max-content;
+    padding-right: 300px;
+    padding-left: 420px;
+  }
+  
+  /* カード（work-container） */
+  .work-container {
+    flex: 0 0 auto;
+    width: 250px;
+    background: #4d4d4d;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    scroll-snap-align: start;
+  }
+  
+  .work-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .work-info {
+    padding: 18px;
+    text-align: start;
+    line-height: 1.6;
+    color: #fff;
+    min-height: 80px; 
+  }
+  
+  .work-info h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+  .work-info p {
+    margin: 0;
+    font-size: 10px;
+    color: #fff;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .bg-color-1 {
+    background-color: #a8a8a8;  /* 1番目のカードの背景色 */
+  }
+  
+  /* 2番目のカードのwork-info背景色 */
+  .bg-color-2 {
+    background-color: #b7bfc1;  /* 2番目のカードの背景色 */
+  }
+  
+  /* 3番目のカードのwork-info背景色 */
+  .bg-color-3 {
+    background-color: #818181;  /* 3番目のカードの背景色 */
+  }
+
+  .vertical-card-container {
+    width: 60px;
+    height: 220px;
+    background-color: #b3c7ca;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-top: 45px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .vertical-card-container2 {
+    width: 60px;
+    height: 220px;
+    background-color: #b7b3ca;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-top: 45px;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .vertical-card-container:hover,
+  .vertical-card-container2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .vertical-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vertical-text p {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+  .vertical-footer {
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明の白 */
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    padding: 14px 0;
+    font-weight: bold;
+  }  
+  
+  
+
+/*-------------------------------my-profile セクション---------------------------------*/
+.my-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-profile-container {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: rgb(224, 236, 236);
+    padding: 4rem;
+    margin: 4rem 0 8rem;
+    border-radius: 10px;
+}
+
+.profile-image {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.profile-image img {
+    width: 20vw;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: block;
+    transform-origin: center center;
+}
+
+.my-profile img:hover {
+    transform: scale(1.1);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    width: 26vw;
+}
+
+.profile-details h2 {
+    text-shadow: none;
+    font-family: 'Hanatochocho', sans-serif;
+    color:#505555;
+}
+
+.profile-details p {
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color:#505555;
+}
+
+.view-detail a {
+    background-color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.view-detail a:hover {
+    transition: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*-------------------------------contact セクション---------------------------------*/
+.contact-simple {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-simple h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #505555;
+  text-shadow: none;
+}
+
+.contact-simple p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #505555;
+  text-shadow: none;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ✅ ボタン部分をスライドエフェクトに変更 */
+.contact-simple a {
+  display: inline-block;
+  width: 24rem;
+  line-height: 46px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  border: 3px solid #80a9b6;
+  color: #80a9b6;
+  font-size: 1.2rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: all .35s;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.contact-simple a:before,
+.contact-simple a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: rgba(128, 169, 182, 0.8);
+  z-index: -1;
+  transition: all .35s;
+}
+
+.contact-simple a:before {
+  opacity: 0.5;
+}
+
+.contact-simple a:after {
+  transition-delay: .2s;
+}
+
+.contact-simple a:hover {
+  color: #fff;
+}
+
+.contact-simple a:hover:before,
+.contact-simple a:hover:after {
+  top: 0;
+}
+
+
+
+/*----------------------- footer ---------------------------------*/
+.footer {
+    padding: 2rem;
+    background-color: #f1f1f1;
+}
+
+.footer a {
+    color:#505555;
+    text-decoration: none;
+}
