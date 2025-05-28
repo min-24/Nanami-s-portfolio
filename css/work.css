@@ -294,6 +294,36 @@ body p {
     color: #505555;
 }
 
+/*----------------------------補足 セクション-----------------------------------*/
+.notes {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.notes-row {
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+.notes-title {
+    width: 150px;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #80A9B6;
+}
+
+.notes-description {
+    flex: 1;
+    margin: 0;
+    line-height: 1.8;
+    font-size: 1rem;
+    text-shadow: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #505555;
+}
 
 /*----------------------------next-work セクション-----------------------------------*/
 .next-work {

@@ -353,9 +353,12 @@ body p {
   .menu-item {
     transition: transform 0.3s ease-out;
     opacity: 0.8;
-    width: 10rem;
+    width: 160px;
+    height: 120px;
     z-index: 2;
+    object-fit: cover;
   }
+
   
 
   .menu-block a {
@@ -711,11 +714,11 @@ body p {
 
 .works-img {
     position: relative;
-    width: 100%; 
-    max-width: 30rem; 
-    height: auto;
+    width: 360px; 
+    height: 240px;
     overflow: hidden;
     border-radius: 10px;
+    border: solid 1px rgb(95, 95, 95);
 }
 
 .works-img img {
