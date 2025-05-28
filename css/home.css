@@ -641,6 +641,7 @@ body p {
     height: 25rem;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .intro-img img {
@@ -718,7 +719,7 @@ body p {
     height: 240px;
     overflow: hidden;
     border-radius: 10px;
-    border: solid 1px rgb(95, 95, 95);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .works-img img {
